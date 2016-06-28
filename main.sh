@@ -43,6 +43,11 @@ function t3_latest_date () {
     echo ${__TYPO3_JSON} | jq --raw-output '.["'${version}'"].releases["'${version_str}'"].date'
 }
 
+function time_ago () {
+    local t3_date=${1}
+    echo -e "$(( ( $(date +%s) - $(date -d "$t3_date" +%s) ) /(24 * 60 * 60 ) )) days ago"
+}
+
 function cleanup_before_exit () {
   #echo "Cleaning up. Done"
   exit 0
@@ -55,12 +60,15 @@ trap cleanup_before_exit EXIT
 
 __TYPO3_LATEST_62=$(t3_latest 6.2)
 __TYPO3_LATEST_62_DATE=$(t3_latest_date 6.2)
+__TYPO3_LATEST_62_AGO=$(time_ago ${__TYPO3_LATEST_62_DATE})
 
 __TYPO3_LATEST_7x=$(t3_latest 7)
 __TYPO3_LATEST_7x_DATE=$(t3_latest_date 7)
+__TYPO3_LATEST_7x_AGO=$(time_ago ${__TYPO3_LATEST_7x_DATE})
 
 __TYPO3_LATEST_8x=$(t3_latest 8)
 __TYPO3_LATEST_8x_DATE=$(t3_latest_date 8)
+__TYPO3_LATEST_8x_AGO=$(time_ago ${__TYPO3_LATEST_8x_DATE})
 
 
 echo
@@ -78,15 +86,15 @@ echo -e "${C2}latest_old_stable: ${C0}${C1}v${__T3_LATEST_OLD_STABLE}${C0}"
 
 
 echo
-echo -e "${C6}latest v6.2 LTS branch:${C0} ${C7}v${__TYPO3_LATEST_62}${C0} ${C6}from${C0} ${C5}${__TYPO3_LATEST_62_DATE}${C0}"
+echo -e "${C6}latest v6.2 LTS branch:${C0} ${C7}v${__TYPO3_LATEST_62}${C0} ${C6}from${C0} ${C5}${__TYPO3_LATEST_62_DATE}${C0} ${C2}(released ${__TYPO3_LATEST_62_AGO})${C0}"
 echo -e "${C4}wget get.typo3.org/${__TYPO3_LATEST_62} -O typo3_src-${__TYPO3_LATEST_62}.tar.gz 1>/dev/null 2>&1${C0}"
 echo -e "${C4}tar xzf typo3_src-${__TYPO3_LATEST_62}.tar.gz 1>/dev/null 2>&1 && rm -rf typo3_src-${__TYPO3_LATEST_62}.tar.gz 1>/dev/null 2>&1${C0}"
 echo
-echo -e "${C6}latest v7 LTS branch:${C0} ${C7}v${__TYPO3_LATEST_7x}${C0} ${C6}from${C0} ${C5}${__TYPO3_LATEST_7x_DATE}${C0}"
+echo -e "${C6}latest v7 LTS branch:${C0} ${C7}v${__TYPO3_LATEST_7x}${C0} ${C6}from${C0} ${C5}${__TYPO3_LATEST_7x_DATE}${C0} ${C2}(released ${__TYPO3_LATEST_7x_AGO})${C0}"
 echo -e "${C4}wget get.typo3.org/${__TYPO3_LATEST_7x} -O typo3_src-${__TYPO3_LATEST_7x}.tar.gz 1>/dev/null 2>&1${C0}"
 echo -e "${C4}tar xzf typo3_src-${__TYPO3_LATEST_7x}.tar.gz 1>/dev/null 2>&1 && rm -rf typo3_src-${__TYPO3_LATEST_7x}.tar.gz 1>/dev/null 2>&1${C0}"
 echo
-echo -e "${C6}latest v8 branch:${C0} ${C7}v${__TYPO3_LATEST_8x}${C0} ${C6}from${C0} ${C5}${__TYPO3_LATEST_8x_DATE}${C0}"
+echo -e "${C6}latest v8 branch:${C0} ${C7}v${__TYPO3_LATEST_8x}${C0} ${C6}from${C0} ${C5}${__TYPO3_LATEST_8x_DATE}${C0} ${C2}(released ${__TYPO3_LATEST_8x_AGO})${C0}"
 echo -e "${C4}wget get.typo3.org/${__TYPO3_LATEST_8x} -O typo3_src-${__TYPO3_LATEST_8x}.tar.gz 1>/dev/null 2>&1${C0}"
 echo -e "${C4}tar xzf typo3_src-${__TYPO3_LATEST_8x}.tar.gz 1>/dev/null 2>&1 && rm -rf typo3_src-${__TYPO3_LATEST_8x}.tar.gz 1>/dev/null 2>&1${C0}"
 echo
