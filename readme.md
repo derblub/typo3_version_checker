@@ -29,15 +29,15 @@ latest_stable:     v7.6.9
 latest_old_lts:    v6.2.25
 latest_old_stable: v6.2.25
 
-latest v6.2 LTS branch: v6.2.25 from 2016-05-24 09:57:51 UTC
+latest v6.2 LTS branch: v6.2.25 from 2016-05-24 09:57:51 UTC (released 35 days ago)
 wget get.typo3.org/6.2.25 -O typo3_src-6.2.25.tar.gz 1>/dev/null 2>&1
 tar xzf typo3_src-6.2.25.tar.gz 1>/dev/null 2>&1 && rm -rf typo3_src-6.2.25.tar.gz 1>/dev/null 2>&1
 
-latest v7 LTS branch: v7.6.9 from 2016-05-24 10:05:19 UTC
+latest v7 LTS branch: v7.6.9 from 2016-05-24 10:05:19 UTC (released 35 days ago)
 wget get.typo3.org/7.6.9 -O typo3_src-7.6.9.tar.gz 1>/dev/null 2>&1
 tar xzf typo3_src-7.6.9.tar.gz 1>/dev/null 2>&1 && rm -rf typo3_src-7.6.9.tar.gz 1>/dev/null 2>&1
 
-latest v8 branch: v8.1.2 from 2016-05-24 10:10:34 UTC
+latest v8 branch: v8.1.2 from 2016-05-24 10:10:34 UTC (released 35 days ago)
 wget get.typo3.org/8.1.2 -O typo3_src-8.1.2.tar.gz 1>/dev/null 2>&1
 tar xzf typo3_src-8.1.2.tar.gz 1>/dev/null 2>&1 && rm -rf typo3_src-8.1.2.tar.gz 1>/dev/null 2>&1
 
