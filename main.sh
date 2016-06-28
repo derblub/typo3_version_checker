@@ -92,5 +92,5 @@ echo -e "${C4}tar xzf typo3_src-${__TYPO3_LATEST_8x}.tar.gz 1>/dev/null 2>&1 && 
 echo
 
 echo
-echo -e "${C2}Latest Typo3 Versions, parsed from https://${C0}${C1}${__TYPO3_JSON_URL}${C0}"
+echo -e "${C2}Latest Typo3 Versions, parsed from ${C0}${C1}https://${__TYPO3_JSON_URL}${C0}"
 echo
